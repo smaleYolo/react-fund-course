@@ -26,6 +26,10 @@
     margin-top: 15px;
 }
 
+.post__btns{
+    display: flex;
+}
+
 .post-enter {
     transform: translateX(-850px);
     opacity: 0.1;

@@ -1,30 +1,37 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './styles/App.css';
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Posts from "./Pages/Posts";
-import About from "./Pages/About";
+import {BrowserRouter} from "react-router-dom";
+import Navbar from "./components/UI/Navbar/Navbar";
+import AppRouter from "./components/AppRouter";
+import {AuthContext} from "./context";
 
-const logo = 'https://igorzuevich.com/wp-content/uploads/2015/03/Twitter.png'
 
 function App() {
+    const [isAuth, setIsAuth] = useState(false);
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (localStorage.getItem('auth')){
+            setIsAuth(true)
+        }
+        setLoading(false)
+    },[])
+
     return (
-        <BrowserRouter>
-                <div className="navbar">
-                    <div className="navbar__links">
-                        <Link to="/posts">Posts </Link>
-                        <Link to="/about">About</Link>
-                    </div>
-                </div>
-                <Routes>
-                    <Route path="/posts" element={<Posts/>}/>
-                    <Route path="/about" element={<About/>}/>
-                </Routes>
-        </BrowserRouter>
+        <AuthContext.Provider value={{
+            isAuth, setIsAuth, isLoading
+        }}>
+            <BrowserRouter>
+                <Navbar/>
+                <AppRouter/>
+            </BrowserRouter>
+        </AuthContext.Provider>
     )
 }
 
-
 export default App;
+
+//2.47.11 - endless posts
 
 
 
