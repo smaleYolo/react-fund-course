@@ -31,7 +31,6 @@ function App() {
 
 export default App;
 
-//2.47.11 - endless posts
 
 
 
