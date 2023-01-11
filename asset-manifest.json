@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-fund-course/static/css/main.d6e35512.css",
+    "main.js": "/react-fund-course/static/js/main.94e45d3a.js",
+    "index.html": "/react-fund-course/index.html",
+    "main.d6e35512.css.map": "/react-fund-course/static/css/main.d6e35512.css.map",
+    "main.94e45d3a.js.map": "/react-fund-course/static/js/main.94e45d3a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6e35512.css",
+    "static/js/main.94e45d3a.js"
+  ]
+}
